@@ -38,10 +38,11 @@ for iEbNo = 1:lengthEbNoArray
         
         [uEsti, vEsti] = decoder.decode(recievedSymbol, sigma);
            
-        isError = any(vEsti ~= v);
+        % isError = any(vEsti ~= v);
+        isError = any(uEsti~=u(1:56));
         if isError
             nErrorFrame = nErrorFrame + 1;
-            nErrorBit = nErrorBit + sum(uEsti~=u);
+            % nErrorBit = nErrorBit + sum(uEsti~=u);
             simulationResult.wer(iEbNo) = nErrorFrame / nFrame;
             simulationResult.ber(iEbNo) = nErrorBit / nFrame / k;
             

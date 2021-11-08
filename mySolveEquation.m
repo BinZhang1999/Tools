@@ -12,7 +12,7 @@ augMatrix(:,end) = b;
 [matrixRowEchelon, indexColPivot, rankOfMatrix] = ...
     getEchelonMatrix(augMatrix);
 if ismember(nCol+1, indexColPivot) 
-    xParticular = nan(Col,1); xNullspace = nan(Col,1); nFree = nan;
+    xParticular = nan(nCol,1); xNullspace = nan(nCol,1); nFree = nan;
     return; % b is linear independant with the col.s of A 
 end
 % perform back substitution
