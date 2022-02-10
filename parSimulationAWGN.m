@@ -1,6 +1,6 @@
 function simulationResult = parSimulationAWGN(simulationSetting, G, decoder)
 
-nPar = 2^7;
+nPar = 2^5;
 MAX_NUM_EPOCH = floor(2e7 / nPar);
 
 

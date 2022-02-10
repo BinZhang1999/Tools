@@ -26,6 +26,10 @@ for iEbNo = 1:lengthEbNoArray
     nFrame = 0;
     tStart = tic;
     rng(1);
+    
+    % 
+
+    
     % simulation at EbNoArray(iEbNo)
     for iFrame = 1:MAX_ITER
         % transimit codeword
