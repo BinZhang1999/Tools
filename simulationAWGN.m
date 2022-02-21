@@ -34,7 +34,7 @@ for iEbNo = 1:lengthEbNoArray
     for iFrame = 1:MAX_ITER
         % transimit codeword
         nFrame = nFrame + 1;
-        u = (randn(1, k) > 0);
+        u = (randn(1, k) > 0.5);
         v = mod(u * G, 2);
         bpskSymbol = 1 - 2*v;
         noise = randn(1, n);
@@ -42,8 +42,8 @@ for iEbNo = 1:lengthEbNoArray
         
         [uEsti, vEsti] = decoder.decode(recievedSymbol, sigma);
            
-        % isError = any(vEsti ~= v);
-        isError = any(uEsti~=u(1:56));
+        isError = any(vEsti ~= v);
+
         if isError
             nErrorFrame = nErrorFrame + 1;
             % nErrorBit = nErrorBit + sum(uEsti~=u);
